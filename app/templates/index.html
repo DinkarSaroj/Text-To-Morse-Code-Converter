@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Morse Code Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Text to Morse Code Converter</h1>
+        
+        <!-- Conversion Form -->
+        <form method="POST" class="converter-form">
+            <textarea name="textInput" placeholder="Enter text or Morse code" rows="6" cols="40">{{ input_text }}</textarea>
+            
+            <!-- Radio buttons for conversion mode -->
+            <div class="mode-selection">
+                <label>
+                    <input type="radio" name="mode" value="text_to_morse" {% if mode == "text_to_morse" %}checked{% endif %}>
+                    Text to Morse
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="morse_to_text" {% if mode == "morse_to_text" %}checked{% endif %}>
+                    Morse to Text
+                </label>
+            </div>
+
+            <button type="submit" class="convert-btn">Convert</button>
+        </form>
+
+        <!-- Result Section -->
+        <div class="output">
+            {% if result %}
+                <h2>Result:</h2>
+                <textarea readonly rows="6" cols="40">{{ result }}</textarea>
+
+                <!-- Download Form -->
+                <form action="/download" method="POST">
+                    <input type="hidden" name="result" value="{{ result }}">
+                    <button type="submit">Download</button>
+                </form>
+                
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
