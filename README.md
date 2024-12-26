@@ -1,4 +1,3 @@
-```markdown
 # Text to Morse Code Converter
 
 A simple web application built using **Flask** to convert text to Morse code and vice versa. You can enter plain text, convert it to Morse code, or input Morse code to get the corresponding text.
@@ -59,6 +58,7 @@ A simple web application built using **Flask** to convert text to Morse code and
 3. **Download the result** by clicking on the **"Download"** button to save the output to a `.txt` file.
 
 ## File Structure
+```
 Text-to-Morse-Code-Converter/
 │
 ├── app/
@@ -68,6 +68,7 @@ Text-to-Morse-Code-Converter/
 │
 ├── requirements.txt         # Python dependencies for the project
 └── README.md                # This file
+```
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -75,4 +76,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 - Inspiration from other similar Morse code converter projects.
 - Thanks to Flask for being an awesome web framework.
-```
+
